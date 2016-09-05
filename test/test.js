@@ -11,6 +11,7 @@ describe('parseDigit', function() {
 
     expect(ocr.parseDigit(zero)).to.equal(0);
   });
+
   it('can parse a one', function() {
     const one = [
                  "  |"
@@ -19,5 +20,14 @@ describe('parseDigit', function() {
     ];
 
     expect(ocr.parseDigit(one)).to.equal(1);
+  });
+
+  it('throws exception on bad input', function() {
+    const garbage = [
+          "---",
+          "|||",
+          "---"
+    ];
+    expect(() => ocr.parseDigit(garbage)).to.throw('Not Scannable');
   });
 });
