@@ -10,6 +10,7 @@ describe('parseAccountNumber', function() {
     ];
     expect(parseAccountNumber(input)).to.equal("000000000");
   });
+
   it('mixed account number', function() {
     const input = [
       " _     _  _     _  _  _  _ ",
