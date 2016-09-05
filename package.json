@@ -1,0 +1,23 @@
+{
+  "name": "bank_ocr",
+  "version": "1.0.0",
+  "description": "Bank OCR Kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenjackson/bank_ocr_kata.git"
+  },
+  "author": "Steve Jackson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenjackson/bank_ocr_kata/issues"
+  },
+  "homepage": "https://github.com/stevenjackson/bank_ocr_kata#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
