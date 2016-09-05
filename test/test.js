@@ -3,12 +3,21 @@ const ocr = require('../app/ocr')
 
 describe('parseDigit', function() {
   it('can parse a zero', function() {
-    let input = [
+    const zero = [
                  " - "
                 ,"| |"
                 ," - "
     ];
 
-    expect(ocr.parseDigit(input)).to.equal(0);
+    expect(ocr.parseDigit(zero)).to.equal(0);
+  });
+  it('can parse a one', function() {
+    const one = [
+                 "  |"
+                ,"  |"
+                ,"  |"
+    ];
+
+    expect(ocr.parseDigit(one)).to.equal(1);
   });
 });

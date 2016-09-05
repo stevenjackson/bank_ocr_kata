@@ -1,5 +1,11 @@
+const _ = require('lodash')
+const digit = require('./digit')
 const parseDigit = function(lines) {
-  return 0;
+  if(_.isEqual(lines, digit.one)) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
 
 
