@@ -22,6 +22,16 @@ describe('parseDigit', function() {
     expect(parseDigit(one)).to.equal(1);
   });
 
+  it('can parse a two', function() {
+    const two = [
+                 " _ "
+                ," _|"
+                ,"|_ "
+    ];
+
+    expect(parseDigit(two)).to.equal(2);
+  });
+
   it('throws exception on bad input', function() {
     const garbage = [
           "---",

@@ -12,9 +12,16 @@ const one = [
   ,"  |"
 ];
 
+const two = [
+   " _ "
+  ," _|"
+  ,"|_ "
+];
+
 const map = [
   { digit: zero, value: 0 },
   { digit: one, value: 1 },
+  { digit: two, value: 2 },
 ]
 
 
