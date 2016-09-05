@@ -4,9 +4,9 @@ const parseDigit = require('../app/digit').parseDigit
 describe('parseDigit', function() {
   it('can parse a zero', function() {
     const zero = [
-                 " - "
+                 " _ "
                 ,"| |"
-                ," - "
+                ,"|_|"
     ];
 
     expect(parseDigit(zero)).to.equal(0);
@@ -14,7 +14,7 @@ describe('parseDigit', function() {
 
   it('can parse a one', function() {
     const one = [
-                 "  |"
+                 "   "
                 ,"  |"
                 ,"  |"
     ];

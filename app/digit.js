@@ -1,13 +1,13 @@
 const _ = require('lodash')
 
 const zero = [
-   " - "
+   " _ "
   ,"| |"
-  ," - "
+  ,"|_|"
 ];
 
 const one = [
-   "  |"
+   "   "
   ,"  |"
   ,"  |"
 ];
