@@ -1,5 +1,5 @@
 const expect = require('chai').expect
-const ocr = require('../app/ocr')
+const parseDigit = require('../app/digit').parseDigit
 
 describe('parseDigit', function() {
   it('can parse a zero', function() {
@@ -9,7 +9,7 @@ describe('parseDigit', function() {
                 ," - "
     ];
 
-    expect(ocr.parseDigit(zero)).to.equal(0);
+    expect(parseDigit(zero)).to.equal(0);
   });
 
   it('can parse a one', function() {
@@ -19,7 +19,7 @@ describe('parseDigit', function() {
                 ,"  |"
     ];
 
-    expect(ocr.parseDigit(one)).to.equal(1);
+    expect(parseDigit(one)).to.equal(1);
   });
 
   it('throws exception on bad input', function() {
@@ -28,6 +28,6 @@ describe('parseDigit', function() {
           "|||",
           "---"
     ];
-    expect(() => ocr.parseDigit(garbage)).to.throw('Not Scannable');
+    expect(() => parseDigit(garbage)).to.throw('Not Scannable');
   });
 });
