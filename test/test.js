@@ -1,4 +1,5 @@
-let expect = require('chai').expect
+const expect = require('chai').expect
+const ocr = require('../app/ocr')
 
 describe('parseDigit', function() {
   it('can parse a zero', function() {
