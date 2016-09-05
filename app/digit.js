@@ -18,10 +18,17 @@ const two = [
   ,"|_ "
 ];
 
+const three = [
+   " _ "
+  ," _|"
+  ," _|"
+];
+
 const map = [
   { digit: zero, value: 0 },
   { digit: one, value: 1 },
   { digit: two, value: 2 },
+  { digit: three, value: 3 },
 ]
 
 
