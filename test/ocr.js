@@ -1,4 +1,8 @@
-const expect = require('chai').expect
+const chai = require('chai');
+const chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
+const expect = chai.expect
+
 const ocr = require('../app/ocr')
 const parseAccountNumber = ocr.parseAccountNumber
 const parseFile = ocr.parseFile
@@ -26,7 +30,7 @@ describe('parseAccountNumber', function() {
 describe('parseFile', function() {
   it('can read two account numbers', function() {
     accountNumbers = parseFile('test/two_account_sample.txt');
-    return expect(accountNumbers).to.deep.equal(["123456789", "490067715"]);
+    return expect(accountNumbers).to.eventually.deep.equal(["123456789", "490067715"]);
   });
 });
 

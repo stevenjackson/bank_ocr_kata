@@ -1,6 +1,27 @@
 const _ = require('lodash');
 const parseDigit = require('./digit').parseDigit;
 
+const parseFile = function(filePath) {
+  return new Promise(function(resolve, reject) {
+    const accountNumbers = [];
+    const lineReader = require('readline').createInterface({
+        input: require('fs').createReadStream(filePath)
+    });
+    let buffer = [];
+
+    lineReader.on('line', function (line) {
+      buffer.push(line);
+      if(buffer.length == 4) {
+        accountNumbers.push(parseAccountNumber(buffer.slice(0,3)));
+        buffer = [];
+      }
+    });
+    lineReader.on('close', function(line) {
+      resolve(accountNumbers);
+    });
+  });
+}
+
 const parseAccountNumber = function(lines) {
   var digits = Array(9);
   _.times(digits.length, function(index) {
@@ -21,5 +42,6 @@ const parseAccountNumber = function(lines) {
 }
 
 module.exports = {
+  parseFile: parseFile,
   parseAccountNumber: parseAccountNumber
 }
