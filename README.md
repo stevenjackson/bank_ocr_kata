@@ -42,4 +42,14 @@ But, I'm hoping I'll take this pain one time and then move on to more interestin
 * User story 4 sounds really interesting and is completely incompatible with my very simple parser.
 
 
+## Time extension!
+* With 30 minutes on the clock, I was hoping to get to the checksum story, but first I needed to actually parse a file.
+* A file of two account numbers seemed like a solid test; this would force me to handle the blank line between account numbers.
+* I want to pick at the implementation a bit, I don't love the readline solution, but I knew it would work for this.  This led to me into dealing with callbacks, and  "forced" me into promises as well, which I love (too much?).  Still, I think there's a concept of "4 lines at time reader" hiding in there that could be teased out.
+
+### Finishing story 1 (afbfd51eb1515442e65003397ae78ce4a17742c2)
+* Unfortunately I blew the rest of my timebox creating a 500 line test file.  In real life, I'd ask this customer to provide one, but given my inability to discuss a compromise with a webpage, I thought it would be a good thing to have, and not too hard.  Well, not that hard, but burned 10 minutes.  Fortunately(?) the "integration" test passed first time, which is strange and rather unexpected.  I also realized I don't know how to get inside chai-as-promised and spot check a few values, which I would normally do in an integration test like this.
+
+## Retrospective
+Fun problem!  I hadn't seen this one before and I like the inanity of it.  Surprising no one, I thought I would be well into the third story when time expired, but estimates are hard.  I still feel like perhaps I started at the wrong end, if I'd worked backwards from the "integration" test, maybe I would have ended up with a different solution?  I also found my node was just rusty enough to make me question silly stuff like what the folder conventions were for "not-test" and "test", const vs let, slipping in and out of arrow syntax, etc.  I like to be consistent, but team convention always trumps my personal preferences, and well, I've been on a lot of teams.  The timebox started to eat at me towards the end, I wanted to explore some abstractions, but I also really wanted to get out of the parsing problem as well and move on to the other stories.  Katas are always weird, because there's this clock and a notion of completeness, unlike a code retreat (no expectation of completeness), or production codebase(maintenance never ends, readability is usually worth the extra time).
 
