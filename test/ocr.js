@@ -1,5 +1,7 @@
 const expect = require('chai').expect
-const parseAccountNumber = require('../app/ocr').parseAccountNumber
+const ocr = require('../app/ocr')
+const parseAccountNumber = ocr.parseAccountNumber
+const parseFile = ocr.parseFile
 
 describe('parseAccountNumber', function() {
   it('can parse all zeros', function() {
@@ -18,6 +20,13 @@ describe('parseAccountNumber', function() {
       "|_|  ||_  _|  | _||_|  ||_|",
     ];
     expect(parseAccountNumber(input)).to.equal("012345678");
+  });
+});
+
+describe('parseFile', function() {
+  it('can read two account numbers', function() {
+    accountNumbers = parseFile('test/two_account_sample.txt');
+    return expect(accountNumbers).to.deep.equal(["123456789", "490067715"]);
   });
 });
 
