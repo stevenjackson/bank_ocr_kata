@@ -60,6 +60,19 @@ const nine = [
   ," _|"
 ];
 
+const digits = {
+  zero: zero,
+  one: one,
+  two: two,
+  three: three,
+  four: four,
+  five: five,
+  six: six,
+  seven: seven,
+  eight: eight,
+  nine: nine,
+}
+
 const map = [
   { digit: zero, value: 0 },
   { digit: one, value: 1 },
@@ -82,12 +95,11 @@ const parseDigit = function(lines) {
   if(digit) {
     return digit.value;
   } else {
-    throw new Error('Not Scannable');
+    return "?";
   }
 }
 
 module.exports = {
-  zero: zero,
-  one: one,
+  digits: digits,
   parseDigit: parseDigit
 };

@@ -102,6 +102,6 @@ describe('parseDigit', function() {
           "|||",
           "---"
     ];
-    expect(() => parseDigit(garbage)).to.throw('Not Scannable');
+    expect(parseDigit(garbage)).to.equal('?')
   });
 });
